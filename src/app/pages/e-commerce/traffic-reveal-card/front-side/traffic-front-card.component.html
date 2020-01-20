@@ -1,0 +1,13 @@
+<nb-list>
+  <nb-list-item class="item" *ngFor="let item of messages;">
+    <span>{{ item.code }}</span>
+    <span>{{ item.district }}</span>
+     <span>{{ item.site }}</span>
+    <span class="delta" [class.up]="item.status == 1" [class.down]="item.status == 0">
+      <nb-icon [icon]="item.status == 1 ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
+      {{ status(item.status) }}
+    </span>
+    <span>Last Seen : {{ item.last_seen }}</span>
+    
+  </nb-list-item>
+</nb-list>
